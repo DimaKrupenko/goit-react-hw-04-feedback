@@ -2,16 +2,26 @@ import React from 'react';
 import styles from './FeedbackOptions.module.css'
 
 
-const FeedbackOptions = ({options, onLeaveFeedback}) =>  {
-const keys = Object.keys(options)
+const FeedbackOptions = ({good, onLeaveFeedbackGood, neutral, onLeaveFeedbackNeutral, bad, onLeaveFeedbackBad}) =>  {
+  
   return (<div className={styles.buttonConteiner}>
-           { keys.map(key => (
+          
              <button className={styles.button}
                type="button"
-               key={key}
-               id={key}
-               onClick={onLeaveFeedback}>{key}</button>
-          ))} 
+               key='good'
+               id={good}
+      onClick={onLeaveFeedbackGood}>Good</button>
+    <button className={styles.button}
+               type="button"
+               key='neutral'
+               id={neutral}
+      onClick={onLeaveFeedbackNeutral}>Neutral</button>
+    <button className={styles.button}
+               type="button"
+               key='bad'
+               id={bad}
+               onClick={onLeaveFeedbackBad}>Bad</button>
+        
           
             
       </div>
